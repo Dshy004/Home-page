@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --first-color: #f3f3f3;
+    --second-color: #fab371;
+    --third-color: #202020;
+    --fourth-color: #363636;
+}
+
+body {
+    background-color: var(--first-color);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title_site {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.title_site .title h5 {
+    font-weight: 400;
+    font-size: 20px;
+}
+.title_site .title a {
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--second-color);
+}
+.title_site .buttons {
+    margin: 15px 0 0 0;
+}
+.title_site .buttons button {
+    padding: 10px 10px;
+    border-radius: 7px;
+    background-color: var(--third-color);
+    color: var(--first-color);
+    font-weight: bold;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.image_site {
+    margin: 0 20px;
+    width: 35%;
+}
+.image_site .container_image {
+    width: 100%;
+    position: relative;
+}
+.image_site .container_image .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.image_site .container_image .carousel::-webkit-scrollbar {
+    display: none;
+}
+.image_site .container_image .carousel.no-transition {
+    scroll-behavior: auto;
+}
+.image_site .container_image .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.container_image .carousel.dragging .image {
+    cursor: grab;
+    user-select: none;
+}
+.container_image .carousel :where(.image, img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_image .carousel .image {
+    scroll-snap-align: start;
+    height: 450px;
+    list-style: none;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+    text-align: center;
+}
+.container_image .carousel .image img {
+    background: var(--first-color);
+    height: 100%;
+    width: 100%;
+}
+
+#forms {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+form#login {
+    display: none;
+}
+form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    background-color: var(--first-color);
+    padding: 10px 10px;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    animation: slideFront 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    width: 100%;
+    max-width: 500px;
+}
+@keyframes slideFront {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+form h2 {
+    width: 100%;
+    color: var(--third-color);
+}
+form h2 span {
+    float: left;
+    font-weight: 500;
+    margin-left: 35px;
+}
+form h2 button {
+    float: right;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: bold;
+}
+form .inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    width: 85%;
+}
+form .inputs input {
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 1px solid var(--second-color);
+    padding: 10px;
+    color: var(--third-color);
+}
+form .inputs input::placeholder {
+    color: var(--fourth-color);
+}
+form .inputs input[type="submit"] {
+    margin: 20px 0 0 0;
+    background-color: var(--second-color);
+    color: var(--third-color);
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+form .otherlink {
+    margin: 10px 0 0 0;
+}
+form .otherlink button {
+    background: transparent;
+    color: var(--second-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+form .otherlink span {
+    color: var(--third-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    body {
+        overflow: auto;
+    }
+    .container_image .carousel .image {
+        height: 250px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .title_site .title h5 {
+        font-size: 15px;
+    }
+    .title_site .title a {
+        font-size: 25px;
+    }
+    .image_site {
+        margin: 0 5px;
+    }
+    .container_image .carousel .image {
+        height: 175px;
+    }
+    form {
+        width: 100%;
+        max-width: 375px;
+    }
+}

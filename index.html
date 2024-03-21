@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Font-awesome/css/all.css">
+    <script src="Script/image_control.js" defer></script>
+    <script src="Script/form_control.js" defer></script>
+</head>
+<body>
+    <section class="home">
+        <div class="title_site">
+            <div class="title">
+                <h5>Welcome to</h5>
+                <a href="index.html">My Food Website</a>
+            </div>
+            <div class="buttons">
+                <button id="btnform">Join us</button>
+            </div>
+        </div>
+        <div class="image_site">
+            <div class="container_image">
+                <ul class="carousel">
+                    <li class="image"><img src="images/1.PNG" alt="img" draggable="false"></li>
+                    <li class="image"><img src="images/2.PNG" alt="img" draggable="false"></li>
+                    <li class="image"><img src="images/3.PNG" alt="img" draggable="false"></li>
+                    <li class="image"><img src="images/4.PNG" alt="img" draggable="false"></li>
+                    <li class="image"><img src="images/5.PNG" alt="img" draggable="false"></li>
+                    <li class="image"><img src="images/6.PNG" alt="img" draggable="false"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="forms" id="forms">
+        <form method="post" id="joinus">
+            <h2>
+                <span>Join us</span>
+                <button id="closejoinus"><i class="fas fa-x"></i></button>
+            </h2>
+            <div class="inputs">
+                <input type="email" name="" id="" placeholder="Email" required>
+                <input type="text" name="" id="" placeholder="Pseudo" required>
+                <input type="password" name="" id="" placeholder="Enter a password" required>
+                <input type="password" name="" id="" placeholder="Confirm password" required>
+                <input type="submit" name="" id="" value="Join now">
+            </div>
+            <div class="otherlink">
+                <button id="btnlogin">Login in</button>
+                <span>if you are already a member</span>
+            </div>
+        </form>
+        <form method="post" id="login">
+            <h2>
+                <span>Login</span>
+                <button id="closelogin"><i class="fas fa-x"></i></button>
+            </h2>
+            <div class="inputs">
+                <input type="email" name="" id="" placeholder="Enter your email" required>
+                <input type="password" name="" id="" placeholder="Enter your password" required>
+                <input type="submit" name="" id="" value="Login now">
+            </div>
+            <div class="otherlink">
+                <button id="btnjoinus">Join us</button>
+                <span>if you are not a member</span>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
